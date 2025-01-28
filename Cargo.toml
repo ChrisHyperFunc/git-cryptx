@@ -1,0 +1,31 @@
+[package]
+name = "git-cryptx"
+version = "1.2.2"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "A tool for encrypting sensitive files in Git repositories"
+license = "MIT"
+
+[lib]
+name = "git_cryptx"
+path = "src/lib.rs"
+
+[[bin]]
+name = "git-cryptx"
+path = "src/main.rs"
+
+[dependencies]
+aes-gcm = "0.10.3"
+rand = "0.8"
+sha2 = "0.10"
+git2 = "0.18"
+thiserror = "1.0"
+toml = "0.5"
+fluent = "0.16.1"
+fluent-bundle = "0.15.3"
+fluent-syntax = "0.11"
+fluent-langneg = "0.12"
+unic-langid = "0.9"
+
+[dev-dependencies]
+tempfile = "3.8"   # 用于测试的临时文件 
