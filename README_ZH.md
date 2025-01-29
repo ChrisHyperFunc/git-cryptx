@@ -14,9 +14,42 @@ https://git-cryptx.201945.xyz
 - 💻 跨平台支持
 
 ## 安装
-bash
-cargo install git-cryptx
 
+### 从源代码编译
+
+要编译该项目，请使用以下命令：
+```bash
+cargo build --release
+```
+
+编译完成后，请确保将可执行文件永久添加到系统的 `PATH` 中：
+
+- **Linux/macOS**:
+  将以下行添加到您的 `~/.bashrc`、`~/.bash_profile` 或 `~/.zshrc` 文件中：
+  ```bash
+  export PATH="$PATH:/path/to/your/project/target/release"
+  ```
+  然后运行：
+  ```bash
+  source ~/.bashrc  # 或 source ~/.bash_profile 或 source ~/.zshrc
+  ```
+
+- **Windows**:
+  1. 在开始菜单中搜索“环境变量”。
+  2. 点击“环境变量”。
+  3. 在“系统变量”下，找到 `Path` 变量并点击“编辑”。
+  4. 添加项目的 `target/release` 目录路径。
+  5. 点击“确定”以保存更改。
+
+### 使用 Homebrew 安装
+
+对于 macOS 用户，您可以使用 Homebrew 安装 `git-cryptx`：
+
+```bash
+brew tap ChrisHyperFunc/brew
+brew install git-cryptx
+brew upgrade git-cryptx
+```
 
 ## 快速开始
 1. 初始化仓库：

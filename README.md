@@ -15,6 +15,42 @@ https://git-cryptx.201945.xyz
 
 ## Installation
 
+### Build from Source
+
+To compile the project, use the following command:
+```bash
+cargo build --release
+```
+
+After building, make sure to add the binary to your system's `PATH` permanently:
+
+- **Linux/macOS**:
+  Add the following line to your `~/.bashrc`, `~/.bash_profile`, or `~/.zshrc` file:
+  ```bash
+  export PATH="$PATH:/path/to/your/project/target/release"
+  ```
+  Then, run:
+  ```bash
+  source ~/.bashrc  # or source ~/.bash_profile or source ~/.zshrc
+  ```
+
+- **Windows**:
+  1. Search for "Environment Variables" in the Start menu.
+  2. Click on "Environment Variables".
+  3. Under "System variables", find the `Path` variable and click "Edit".
+  4. Add the path to your project's `target/release` directory.
+  5. Click "OK" to save changes.
+
+### Install via Homebrew
+
+For macOS users, you can install `git-cryptx` using Homebrew:
+
+```bash
+brew tap ChrisHyperFunc/brew
+brew install git-cryptx
+brew upgrade git-cryptx
+```
+
 ## Quick Start
 
 1. Initialize repository:
