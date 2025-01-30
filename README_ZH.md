@@ -134,7 +134,7 @@ git-cryptx init
 3. 从团队其他成员处获取密钥文件：
    - 获取 `.git/cryptx/keys/global_ase_key` 文件
    - 将密钥文件放入本地仓库的相同位置
-   - 或执行 git-cryptx set-key 密钥
+   - 或执行 git-cryptx set-key <your-key>
 
 4. 重新检出文件：
 ```bash

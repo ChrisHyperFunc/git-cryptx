@@ -114,7 +114,7 @@ git-cryptx init
 3. Obtain the key file from other team members:
    - Get the `.git/cryptx/keys/global_ase_key` file
    - Place it in the same location in your local repository
-   - Or git-cryptx git-cryptx set-key <key>
+   - Or git-cryptx set-key <your-key>
 
 4. Check configuration status:
 ```bash
