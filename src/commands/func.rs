@@ -38,11 +38,6 @@ fn help(_parameters: &[String], bundle: &FluentBundle<FluentResource>, args: &mu
     let website_url = load_website_url();
     let mut errors = vec![];
     println!(
-        "{}: {}",
-        util::format_pattern(bundle, "website-label", &mut errors),
-        website_url
-    );
-    println!(
         "{}:",
         util::format_pattern(bundle, "usage-label", &mut errors)
     );
@@ -61,6 +56,11 @@ fn help(_parameters: &[String], bundle: &FluentBundle<FluentResource>, args: &mu
         let value = bundle.format_pattern(pattern, Some(args), &mut errors);
         println!("  {} - {}", command, value);
     }
+    println!(
+        "\n{}: {}",
+        util::format_pattern(bundle, "website-label", &mut errors),
+        website_url
+    );
 }
 
 fn version(bundle: &FluentBundle<FluentResource>) {
@@ -82,11 +82,6 @@ fn init(bundle: &FluentBundle<FluentResource>) {
     let value = util::format_pattern(bundle, "init-command", &mut errors);
 
     println!("{}", value);
-    println!(
-        "{}: {}",
-        util::format_pattern(bundle, "website-label", &mut errors),
-        website_url
-    );
 
     let git_root = match util::find_git_root() {
         Some(path) => path,
@@ -102,7 +97,7 @@ fn init(bundle: &FluentBundle<FluentResource>) {
     };
 
     let gitattributes_path = git_root.join(".gitattributes");
-    let default_config = "*.secret filter=git-cryptx diff=git-cryptx";
+    let default_config = "example.secret filter=git-cryptx diff=git-cryptx";
 
     if gitattributes_path.exists() {
         let content = match fs::read_to_string(&gitattributes_path) {
@@ -176,6 +171,11 @@ fn init(bundle: &FluentBundle<FluentResource>) {
     println!(
         "{}",
         util::format_pattern(bundle, "init-success", &mut errors)
+    );
+    println!(
+        "\n{}: {}",
+        util::format_pattern(bundle, "website-label", &mut errors),
+        website_url
     );
 }
 

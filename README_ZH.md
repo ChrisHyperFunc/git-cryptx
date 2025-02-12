@@ -58,11 +58,16 @@ git-cryptx init
 2. 设置加密密钥：
 git-cryptx set-key <your-key>
 
-3. 配置需要加密的文件（编辑 .gitattributes）：
+3. 配置需要加密的文件（编辑 .gitattributes 并且该文件不得加密）：
 ```
-.secret filter=git-cryptx diff=git-cryptx
-config/.key filter=git-cryptx diff=git-cryptx
-sensitive/ filter=git-cryptx diff=git-cryptx
+example.secret filter=git-cryptx diff=git-cryptx
+*.secret filter=git-cryptx diff=git-cryptx
+config/*.key filter=git-cryptx diff=git-cryptx
+sensitive/* filter=git-cryptx diff=git-cryptx
+sub_tree_directories/** filter=git-cryptx diff=git-cryptx
+
+如有必要
+.gitattributes !filter !diff
 ```
 
 

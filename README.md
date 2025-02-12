@@ -59,11 +59,16 @@ git-cryptx init
 2. Set encryption key:
 git-cryptx set-key <your-key>
 
-3. Configure files to encrypt (edit .gitattributes):
+3. Configure files to encrypt (edit .gitattributes and the file must not be encrypted):
 ```
-.secret filter=git-cryptx diff=git-cryptx
-config/.key filter=git-cryptx diff=git-cryptx
-sensitive/ filter=git-cryptx diff=git-cryptx
+example.secret filter=git-cryptx diff=git-cryptx
+*.secret filter=git-cryptx diff=git-cryptx
+config/*.key filter=git-cryptx diff=git-cryptx
+sensitive/* filter=git-cryptx diff=git-cryptx
+sub_tree_directories/** filter=git-cryptx diff=git-cryptx
+
+If necessary：
+.gitattributes !filter !diff
 ```
 
 ## Commands
