@@ -34,3 +34,8 @@ build_and_package "x86_64-pc-windows-gnu"
 build_and_package "x86_64-unknown-linux-musl"
 
 rm -f .intentionally-empty-file.o
+
+# Homebrew
+echo "Homebrew sha256:"
+shasum -a 256 target/release-cross/git-cryptx-aarch64-apple-darwin.tar.gz
+shasum -a 256 target/release-cross/git-cryptx-x86_64-apple-darwin.tar.gz
